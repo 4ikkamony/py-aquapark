@@ -14,7 +14,7 @@ class IntegerRange:
         if not isinstance(value, int):
             raise TypeError(f"Expected an int, got {type(value)}")
 
-        if value not in range(self.min_amount, self.max_amount + 1):
+        if not (self.min_amount <= value <= self.max_amount):
             raise ValueError(
                 f"Value must be between "
                 f"{self.min_amount} and {self.max_amount}"
